@@ -6,7 +6,7 @@ let totalOfOddNumbers = numberList.reduce(function(accumulator, currentValue) {
   // Code this reducer function so that the result is the sum
   // of only the odd values (3, 7, 19, etc). Do not alter any other code.
   // PLACE YOUR CODE BELOW
-
+  return accumulator + ((currentValue % 2 !== 0) ? currentValue : 0);
   // PLACE YOUR CODE ABOVE
 }, 0)
 

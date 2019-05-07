@@ -13,15 +13,33 @@ function paintMixer(color1, color2) {
   */
   // PLACE YOUR CODE BELOW
 
+  colors = {
+    purple: ['blue', 'red'],
+    brown: ['red', 'green'],
+    orange: ['red', 'yellow'],
+    brown: ['green', 'red'],
+    green: ['blue', 'yellow']
+  };
+
+  for (let colorName in colors) {
+    if (colors.hasOwnProperty(colorName)) {
+      if (colors[colorName].includes(color1) && colors[colorName].includes(color2)) {
+        return colorName;
+      }
+    }
+  }
+
+  return 'unknown';
   // PLACE YOUR CODE ABOVE
 }
 
-paintMixer('blue', 'red') === 'purple' && console.log('First mix worked')
-paintMixer('red', 'green') === 'brown' && console.log('Second mix worked')
-paintMixer('red', 'yellow') ==='orange' && console.log('Third mix worked')
-paintMixer('green', 'red')=== 'brown' && console.log('Fourth mix worked')
-paintMixer('blue', 'yellow') ==='green' && console.log('Fifth mix worked')
-paintMixer('apple', 'frog') ==='unknown' && console.log('Apples and frogs don\'t mix, as expected')
+paintMixer('blue', 'red') === 'purple' && console.log('First mix worked');
+paintMixer('red', 'green') === 'brown' && console.log('Second mix worked');
+paintMixer('red', 'yellow') === 'orange' && console.log('Third mix worked');
+paintMixer('green', 'red') === 'brown' && console.log('Fourth mix worked');
+paintMixer('blue', 'yellow') === 'green' && console.log('Fifth mix worked');
+paintMixer('apple', 'frog') === 'unknown' &&
+  console.log("Apples and frogs don't mix, as expected");
 
 /*
 If everything works, you should see the following on the console

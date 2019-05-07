@@ -2,9 +2,9 @@
 // the specified number of seconds has passed
 const wait = function(seconds) {
   return new Promise(function(resolve, reject) {
-    setTimeout(resolve, 1000 * seconds)
-  })
-}
+    setTimeout(resolve, 1000 * seconds);
+  });
+};
 
 /*
 Your task is to write a promise chain using the function
@@ -13,10 +13,19 @@ to the console, waits 3 more seconds and then writes
 "I waited 3 more seconds"
 */
 
-console.log('Go!')
+console.log('Go!');
 
 // PLACE YOUR CODE BELOW
-
+wait(1)
+  .then(() => {
+    console.log('I waited 1 second');
+    return new Promise((resolve, reject) => {
+      setTimeout(() => resolve(), 2000);
+    });
+  })
+  .then(() => {
+    console.log('I waited 3 second');
+  });
 // PLACE YOUR CODE ABOVE
 /*
 You console output should look like the following AND wait the
